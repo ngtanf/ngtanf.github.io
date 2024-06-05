@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>算数ステップ - ログイン</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+
+  #loginForm {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+
+  }
+
+  #loginForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #loginForm input[type="text"],
+  #loginForm input[type="password"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  #loginForm input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #loginForm input[type="button"]:hover {
+    background-color: #0056b3;
+  }
+
+  #loginMessage {
+    color: red;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div id="loginForm">
+  <h2>算数の学習 - 算数ステップ
+  にログインする</h2>
+  <form>
+    <label for="username">ユーザー名:</label>
+    <input type="text" id="username" name="username">
+    <label for="password">パスワード:</label>
+    <input type="password" id="password" name="password">
+    <input type="button" value="Login" onclick="checkLogin()">
+  </form>
+  <p id="loginMessage"></p>
+</div>
+
+<script>
+function checkLogin() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  if (username === "mine" && password === "eagle") {
+    window.location.href = "/f0d690bf01b741aa567897199d2002e18c6bb1f4/";
+  } else {
+    document.getElementById("loginMessage").innerHTML = "そのユーザー名、パスワードは正しくありません。もう一度試してください。";
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+  }
+}
+</script>
+
+</body>
+</html>
